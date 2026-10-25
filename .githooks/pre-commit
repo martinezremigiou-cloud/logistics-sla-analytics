@@ -1,0 +1,44 @@
+#!/bin/sh
+# ============================================================
+# [REGIMEN] pre-commit — SOLO `tsc --noEmit`, y eso es la decisión.
+#
+# QUÉ CIERRA. La regla «los tres instrumentos» existía desde hace ocho bloques
+# sin nada que la sostuviera, y falló CINCO veces del mismo modo: la suite verde
+# con `tsc` rojo, porque vitest transpila con esbuild y **esbuild no comprueba
+# tipos**. Las cinco las cazó una disciplina —correr los tres siempre— y una
+# disciplina no protege a la siguiente sesión, ni al mismo agente con prisa.
+#
+# POR QUÉ SOLO `tsc` Y NO LOS TRES:
+#
+#     tsc --noEmit          segundos
+#     vitest run (2 938)    minutos
+#     next build            minutos
+#
+# Este proyecto hace 5-16 commits atómicos por bloque. Un `pre-commit` con los
+# tres cobraría la suite completa hasta dieciséis veces por bloque, y entonces
+# pasa lo de siempre:
+#
+#     **Un gancho que tarda mucho es un gancho que alguien desactiva.**
+#
+# Y la regla que más importa —«sin --no-verify»— no se rompe por rebeldía: se
+# rompe por impaciencia. El fallo recurrente es específicamente `tsc`, y `tsc`
+# solo es barato. Los otros dos se corren con `npm run verificar` antes de
+# cerrar, y ahí sí valen su minuto.
+#
+# LO QUE ESTE GANCHO **NO** HACE, dicho para que nadie lo lea de más: no corre
+# la suite, no corre el build, y no mira el contenido de lo que se commitea.
+# No sustituye a `npm run verificar` — cierra el único agujero que se abrió
+# cinco veces.
+# ============================================================
+npx tsc --noEmit || {
+  echo ""
+  echo "  tsc ROJO. El commit se detuvo."
+  echo ""
+  echo "  Es la sexta vez que esto pasa en este repo, y siempre igual:"
+  echo "  la suite puede estar VERDE porque vitest transpila con esbuild,"
+  echo "  y esbuild NO comprueba tipos."
+  echo ""
+  echo "  Arregla los tipos. No uses --no-verify."
+  echo ""
+  exit 1
+}

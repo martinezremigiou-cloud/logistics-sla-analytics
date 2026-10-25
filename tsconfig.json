@@ -1,0 +1,122 @@
+{
+  // ============================================================
+  // [2.0.1-B] LOS `include` DE DISTDIR ESTAN PRE-DECLARADOS A PROPOSITO.
+  //
+  // MEDIDO: `next build` REESCRIBE este archivo si su `distDir` no aparece en
+  // `include` — le agrega su entrada y de paso reformatea el archivo entero.
+  // Con cuatro frentes construyendo sobre un solo arbol, eso convertia a
+  // `tsconfig.json` en el NUEVO recurso en disputa: cada build lo ensuciaba con
+  // una entrada distinta. La contramedida del `distDir` habria reintroducido en
+  // otro archivo el problema que vino a quitar.
+  //
+  // Con los cinco declarados, Next no toca nada. Comprobado por hash, y con el
+  // control en las dos direcciones: build con un distDir declarado -> hash SIN
+  // CAMBIO; build con uno NO declarado (`.next-zzz`) -> lo reescribe.
+  //
+  // Si nace un frente nuevo, su `distDir` va aqui ANTES de su primer build.
+  // Ver `docs/ai-assisted-workflow.md`.
+  //
+  // [2.0.1-C] `.next-lc` NO es un frente: es el `distDir` del `layout-check`.
+  // Nacio de una necesidad medida — el arnes corre su PROPIO `next build`, y
+  // hacerlo sobre el distDir de un frente pisa el build que ese frente esta
+  // sirviendo (la trampa P1: el puerto sigue escuchando y las rutas caen a 500).
+  // Con `NEXT_DIST_DIR=.next-lc` el arnes se aisla y el server de QA sobrevive
+  // a la corrida — comprobado el 8-sep: `/login` seguia en 200 con el mismo
+  // BUILD_ID despues de las 268 mediciones.
+  //
+  // Y ENTRO AQUI PORQUE LA REGLA DE ARRIBA MORDIO: la primera corrida con
+  // `.next-lc` sin declarar dejo `tsconfig.json` modificado, exactamente como
+  // el control de `.next-zzz` predice. Esta linea es esa correccion.
+  // ============================================================
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    // [DASH-E · C-DASH·14] `noUnusedLocals` NO forma parte de `strict`: es un opt-in
+    // aparte. Por eso `tsc` salia VERDE con un simbolo huerfano y solo el lint de
+    // `next build` lo cazaba — y el gancho de pre-commit corre SOLO `tsc`, a proposito
+    // (regla del repo: un gancho que tarda minutos es un gancho que alguien desactiva).
+    //
+    // Consecuencia medida: la clase entera de «simbolo huerfano» era INVISIBLE para el
+    // unico instrumento que corre en cada commit. Los DOS ejemplares del arco
+    // «tsc y vitest verdes, build rojo» son de esta clase:
+    //
+    //   13-sep  `RadarSerie`, un import de tipo huerfano
+    //   15-sep  dos locales `container` sin usar, en C-DASH·9   SIN COMMIT: se
+    //           arreglo antes de comitear, asi que no dejo rastro en el log
+    //
+    // Y ESTE FLAG LOS CAZA A LOS DOS — medido, no supuesto, replantando cada uno:
+    //   import de tipo huerfano   -> tsc EXIT 2, TS6196 'is declared but never used'
+    //   local destructurado       -> tsc EXIT 2, TS6133 'value is never read'
+    // Sin la sonda: EXIT 0. Con ella: EXIT 2. La guarda guarda, y se le vio el rojo.
+    //
+    // Con esto, la clase se mueve del build al gancho: `tsc` tarda segundos y
+    // detiene el commit, que es donde esta clase tiene que morir.
+    //
+    // MEDIDO ANTES DE ENCENDERLO, que es lo que lo vuelve un cambio y no una apuesta:
+    //   noUnusedLocals      -> 0 errores en TODO el repo
+    //   noUnusedParameters  -> 4 errores, TODOS en components/config (2 archivos,
+    //                          parametros de callback en pruebas)
+    //
+    // Por eso va UNO y no los dos: encender el segundo pondria en rojo codigo de otro
+    // frente, y eso no es un cambio de DASH-E — es un cambio de repo. Queda propuesto
+    // con su conteo, para que Config decida.
+    //
+    // Y EL LIMITE, dicho: esto cierra los SIMBOLOS HUERFANOS, no la distancia entera
+    // entre `tsc` y el lint. `next/core-web-vitals` trae reglas de React y de
+    // accesibilidad que ningun flag de `tsc` replica. La distancia se acorta.
+    "noUnusedLocals": true,
+    // [DASH-E · C-DASH·10] Y el hermano, encendido el 15-sep tras medirlo y
+    // despues de que se asignara. Costaba 4 errores TS6133, los CUATRO en
+    // `components/config` y los cuatro de la misma forma: un parametro POSICIONAL
+    // que no se puede borrar porque el siguiente si se usa (`(input, init)` de un
+    // `vi.fn` y `(id, body)` de un router de stub). El arreglo son 4 guiones bajos,
+    // y la exencion esta MEDIDA, no supuesta: `tsc --noUnusedParameters` sobre una
+    // sonda con `_input` y `input` reporta SOLO el segundo.
+    //
+    // Y NO duplica al lint, que es lo que hacia falta decir antes de encenderlo: el
+    // `next build` salia VERDE con los cuatro puestos, porque
+    // `@typescript-eslint/no-unused-vars` usa `args: after-used` y esos cuatro van
+    // ANTES del ultimo usado. Esto no cierra un hueco del build: abre una regla
+    // nueva, mas estricta que el lint, sobre TODO el repo.
+    "noUnusedParameters": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next-proyectos/types/**/*.ts",
+    ".next-dash/types/**/*.ts",
+    ".next-correo/types/**/*.ts",
+    ".next-chat/types/**/*.ts",
+    ".next-lc/types/**/*.ts",
+    ".next-catalogo/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

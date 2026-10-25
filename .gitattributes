@@ -1,0 +1,19 @@
+# Line endings: LF everywhere in the repo and in the working tree (CI runs on Linux).
+* text=auto eol=lf
+
+# Binary assets: never touched by end-of-line conversion.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.pdf   binary
+*.xlsx  binary
+*.xls   binary
+*.ods   binary
+*.zip   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
