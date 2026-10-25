@@ -1,0 +1,394 @@
+/* ============================================================
+   ESTE ARCHIVO SE PARSEA. Sus comentarios pasan por un parser.
+
+   `src/services/documento/tokens.globals.test.ts` lo lee CRUDO y busca
+   `--mx-*: valor;` con un regex, para comprobar que los tokens del PDF siguen a
+   los del tema. **No quita los comentarios antes de buscar**, asi que:
+
+     - un token mencionado con DOS PUNTOS dentro de un comentario se lee como una
+       DECLARACION — y el regex se lleva como valor todo lo que haya hasta el
+       siguiente `;`, que puede estar parrafos mas abajo;
+     - una LLAVE DE CIERRE dentro de un comentario trunca el bloque `:root`,
+       porque el parser corta en la primera que encuentra.
+
+   La primera ya mordio, el 15-sep: un comentario que explicaba un contrato de
+   contraste escribio `--mx-surface` seguido de dos puntos y puso en rojo dos
+   pruebas de otro territorio. Ver `docs/engineering/failure-patterns.md` (P34).
+
+   MIENTRAS ESO SIGA ASI: al comentar aqui, nombra los tokens entre comillas
+   invertidas y SIN dos puntos detras, y no escribas una llave de cierre.
+   **Esta linea no es la contramedida** —depende de que alguien la lea— es el
+   cartel que dice donde mirar cuando algo se rompa sin causa aparente. La
+   contramedida es que el parser quite los comentarios, y vive en el otro
+   territorio: deuda `PARSER-DE-GLOBALS-LEE-COMENTARIOS`.
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 33% 97%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 214 55% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 25% 27%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 214 55% 24%;
+    --destructive: 18 86% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 60% 48%;
+    --radius: 0.625rem;
+
+    --mx-bg:#F4F6F9; --mx-surface:#FFFFFF; --mx-surface-2:#F8FAFC; --mx-surface-3:#F1F5F9;
+    --mx-track:#EEF2F6; --mx-border:#E2E8F0; --mx-border-soft:#EEF2F6;
+    --mx-text:#0F172A; --mx-text-strong:#1E293B; --mx-text-2:#334155; --mx-text-3:#475569;
+    --mx-muted:#64748B; --mx-muted-2:#94A3B8; --mx-muted-3:#CBD5E1;
+    --mx-navy-ink:#1B365D;
+    --mx-tint-blue:#E8F1FB; --mx-tint-green:#E7F4ED; --mx-tint-amber:#FBF1E3; --mx-tint-indigo:#E7EEFD;
+    --mx-accent:#2E78C7; --mx-good:#1F8A5B; --mx-warn:#B45309; --mx-info:#2563EB;
+
+    /* Bloque 5 · P3 — paleta curada de color de SKU (espejo de `src/lib/colores-sku.ts`, valores `light`). */
+    --mx-tag-azul:#3B6FD9; --mx-tag-verde:#16803D; --mx-tag-naranja:#C2670E; --mx-tag-morado:#7C3AED;
+    --mx-tag-rojo:#DC2626; --mx-tag-turquesa:#0E7C86; --mx-tag-rosa:#BE1C6B; --mx-tag-grafito:#475569;
+
+    /* [2.0.1-B · S-1] La apariencia POR DEFECTO de un proyecto. Es el
+       --mx-tag-azul de arriba, y el tinte es ese mismo hex + 1F (12 %, el alfa
+       de la maqueta). Se escribe el valor y no `var(--mx-tag-azul)` porque
+       `globals-tema.test.ts` deriva de él que es un COLOR y exige su par en
+       `.dark`; con un `var()` la guarda lo tomaría por geometría y el par
+       dejaría de ser obligatorio. Que sean copias no las exime de coincidir:
+       `apariencia-proyecto.test.ts` las compara contra --mx-tag-azul. */
+    --mx-proyecto-acento:#3B6FD9; --mx-proyecto-tinte:#3B6FD91F;
+
+    /* Bloque 6 · F3 Dashboard — token nuevo de gráficas (serie #2 del radar por
+       marca; NUNCA reusar --mx-tag-morado, que es semántico de color de SKU). */
+    --mx-graf-violeta:#7C3AED;
+    /* [DASH-E · E-1] Tres tonos MAS de grafica, para el riel de embarques. La
+       familia --mx-graf-* existe justamente para esto: color de GRAFICA, separado
+       de --mx-tag-*, que es semantico de color de SKU. Los tres nacen de una
+       medicion, no de un gusto:
+
+       --mx-graf-pizarra  El grupo «Aduana». NINGUN token del tema tenia este
+                          valor: era el hueco literal de la paleta firmada.
+       --mx-graf-petroleo El grupo «Almacenes». El tono existia como
+                          --mx-tag-turquesa, y la linea de arriba prohibe por
+                          escrito reusar la familia --mx-tag-* para grafica. Se
+                          copia el VALOR y no la referencia, a proposito: si
+                          manana el color de SKU cambia, el riel no se mueve —
+                          son dos hechos distintos que hoy coinciden.
+       --mx-graf-jade     El grupo «Disponible». Es --mx-good (#1F8A5B) con la
+                          luminosidad bajada 1,5 puntos, mismo matiz 157° y misma
+                          saturacion 63 %. Existe porque --mx-good da 4,33:1 con
+                          tinta blanca y REPRUEBA los 4,5:1 de texto normal, y no
+                          se puede oscurecer en sitio: alimenta `success` (68 usos
+                          en el portal) y la 3.ª serie del radar. Repintarlo
+                          cambiaria todos los estados de exito de la app.
+
+       Las dos restricciones que los tres cumplen, medidas y con trinquete en
+       `src/components/dashboard/riel-contraste.test.ts`:
+         A · relleno vs su tinta (--mx-surface) >= 4,5:1  (la cifra del bloque es
+             texto normal a 12,5 px)
+         B · relleno vs el fondo de la app (--mx-bg) >= 3:1  (WCAG 1.4.11: el
+             bloque es un objeto grafico que porta informacion, y el riel no tiene
+             marco, asi que su fondo es la pagina) */
+    --mx-graf-pizarra:#4C6EA8; --mx-graf-petroleo:#0E7C86; --mx-graf-jade:#1E835C;
+    /* [DASH-E · E-6] La RAMPA de «Reservas por KAM»: seis pasos del MISMO matiz
+       (H = 262,1°, el de --mx-graf-violeta) variando la luminosidad.
+
+       NO ES REPINTAR EL TEMA: son tokens NUEVOS de la familia --mx-graf-*, que existe
+       exactamente para esto (color de GRAFICA, separado de --mx-tag-*, que es
+       semantico de SKU). Ningun token existente cambia de valor.
+
+       QUE CODIFICA, y por que no es redundante con el area: el AREA codifica la
+       MAGNITUD —continua, fiel, y el ojo la SUBESTIMA, que es el limite conocido de
+       la burbuja—. La RAMPA codifica el RANGO (1.º..6.º) —discreto, exacto— que es
+       justo lo que el area lee mal. Los seis pasos son FIJOS: no dependen de las
+       cifras, asi que dos KAM casi empatados siguen diciendo quien va primero.
+
+       LA DIRECCION SE INVIERTE CON EL TEMA, y es deliberado: el 1.º es el de MAS
+       contraste contra la tarjeta. En claro eso es el mas OSCURO; en oscuro, el mas
+       CLARO. Es la misma inversion que ya tienen --mx-surface y --mx-accent.
+
+       DERIVADOS, no elegidos a ojo. Los tres criterios, medidos en los DOS temas:
+         A · relleno vs SU TINTA           >= 4,5:1   (la cifra va dentro de la burbuja
+                                                      cuando cabe; la tinta se elige
+                                                      por paso y VOLTEA en el 6.º)
+         B · relleno vs superficie Y fondo >= 3:1     (WCAG 1.4.11 — y el sujeto es
+                                                      `--mx-surface` — la tarjeta
+                                                      tiene marco, a diferencia del
+                                                      riel. Y OJO: un token nombrado
+                                                      con dos puntos dentro de un
+                                                      comentario es indistinguible de
+                                                      una declaracion para un regex;
+                                                      `documento/tokens.globals.test.ts`
+                                                      lo leyo como tal y se puso rojo.)
+         dL* de CIELAB entre pasos         >= 8       (ELEGIDO, no normativo: la razon
+                                                      de contraste mide LEGIBILIDAD;
+                                                      «se distinguen» es otra pregunta
+                                                      y su metrica es dL*)
+
+       Medido en claro: dL* minimo 10,8 · A minimo 4,78 · B minimo 3,02.
+       Y el limite que costo llegar aqui: con la banda de luminosidad simetrica que
+       probe primero, el tema OSCURO solo admitia 4 pasos. El estrangulamiento era mi
+       propio limite, no los contratos — el extremo inutilizable es el PALIDO sobre
+       blanco en claro y el OSCURO sobre oscuro en oscuro, y de eso ya se encarga B. */
+    --mx-graf-violeta-1:#17023b; --mx-graf-violeta-2:#2f0577; --mx-graf-violeta-3:#4807b7;
+    --mx-graf-violeta-4:#6410f6; --mx-graf-violeta-5:#8a49f8; --mx-graf-violeta-6:#a573fa;
+    /* [DASH-F · D-2] La rampa VERDE, que releva a la violeta en «Reservas por KAM».
+       Decision de producto el 17-sep-2026, con su motivo: el morado no comparte con ningun
+       otro componente del sistema. La violeta se queda declarada arriba y sin uso; su
+       retiro es deuda con disparador, no trabajo de este bloque.
+
+       MISMO METODO que la violeta: seis pasos de un solo matiz variando la luminosidad,
+       y cada tema con su propio matiz y saturacion (aqui H 128 y S 100 % en claro,
+       H 131 y S 67,5 % en oscuro) — igual que alla, donde el claro va a H 262,1 y el
+       oscuro a H 255,1 con S 55 %. Exigir el MISMO par a los dos temas dejaba el
+       problema sin solucion, y esa restriccion me la habia inventado yo.
+
+       SEIS CRITERIOS, y los dos ultimos son nuevos de este bloque:
+         A  relleno vs SU TINTA           >= 4,5:1   (la cifra va dentro de la burbuja)
+         B  relleno vs superficie Y fondo >= 3:1     (WCAG 1.4.11)
+         dL* de CIELAB entre pasos        >= 8       (distinguibilidad, no legibilidad)
+         dE2000 contra TODO significado de la misma pantalla >= 6,55
+         C* de CIELAB de cada paso        >= 12,18
+         y el conjunto se elige por MAXIMO MARGEN contra el contrato mas apretado
+
+       LOS DOS UMBRALES NUEVOS SE DERIVAN, no se eligen. El 6,55 es la distancia entre
+       el par MAS PARECIDO de los seis tonos del riel, que ya se acepto como
+       distintos entre si: se le pide al verde estar al menos tan separado de
+       «Disponible» como lo estan esos dos. El 12,18 es el croma MINIMO de la rampa
+       violeta, que ya se acepto como que se lee violeta: sin ese piso el
+       optimizador elegia un paso 1 casi negro en claro y casi blanco en oscuro —
+       cumplian contraste y separacion, y no se leian como un color.
+
+       Y LA SEPARACION NO ES SOLO CONTRA JADE. Se nombro «Disponible» porque es el
+       que vino a la cabeza; la condicion real es que una burbuja no se lea como
+       NINGUN otro significado de la pantalla, asi que se mide tambien contra el ambar
+       del faltante, el verde de estado y los seis tonos del riel.
+
+       Medido en claro: dL* minimo 10,05 · A minimo 4,81 · B minimo 3,10 · dE2000
+       minimo 11,8. Margen minimo normalizado contra el contrato mas apretado: +3,0 %,
+       que es mas de cuatro veces el de la rampa violeta (+0,7 %).
+
+       COSTO DECLARADO: el verde clasico (H 128) no es el de MAYOR separacion. Con el
+       matiz libre el optimo caia en H 93, lima, con dE2000 minimo 14,2 en vez de 10,8.
+       Se prefirio el verde de toda la vida porque es lo acordado; la diferencia
+       son 0,4 puntos de margen, medidos.
+
+       OJO AL ESCRIBIR AQUI: un token nombrado con dos puntos detras, dentro de un
+       comentario, es indistinguible de una declaracion para un regex —
+       `documento/tokens.globals.test.ts` ya se puso rojo asi. Por eso arriba no hay ni
+       un nombre de token seguido de su valor. */
+    --mx-graf-verde-1:#001703; --mx-graf-verde-2:#003006; --mx-graf-verde-3:#004a0a;
+    --mx-graf-verde-4:#00660e; --mx-graf-verde-5:#008512; --mx-graf-verde-6:#00a316;
+    /* [DASH-F · D-7b] LOS TONOS DE LA TENDENCIA. Son TRES NIVELES —pico, medio y
+       valle—, no una rampa y no una direccion. El MEDIO conserva el acento que el
+       tablero ya pintaba, asi que solo los dos extremos estrenan token.
+
+       AQUI DECIA «la barra tiene dos estados: sube y no sube», y se reescribe en vez de
+       dejarse. D-6 entendio «tendencia» como DIRECCION; se corrigio mirando: lo
+       que se pedia era NIVEL —en que parte de la serie cae cada mes—. Un comentario que
+       describe lo contrario del codigo que encabeza ya sobrevivio meses en este repo.
+
+       ANCLADO, no repartido. Se busco el compañero del acento, no una escala nueva:
+       mismo matiz (el del acento, H 211 en claro y 210 en oscuro), con dL* de CIELAB
+       >= 8 respecto a el, contraste >= 3:1 contra la superficie Y contra el fondo
+       (WCAG 1.4.11 — la barra es un objeto grafico que porta informacion, y NO lleva
+       texto dentro: la cifra va encima, sobre la tarjeta, asi que el criterio de
+       4,5:1 contra su propia tinta no aplica aqui), croma por encima del piso de la
+       rampa violeta, y separacion dE2000 por encima del umbral derivado del riel
+       contra TODO significado de la pantalla — los seis tonos del riel, el ambar, el
+       verde de estado y los seis pasos de la rampa verde.
+
+       EL ENFASIS SE INVIERTE CON EL TEMA, igual que las rampas: el PICO es el de MAS
+       contraste contra la tarjeta —en claro el mas OSCURO, en oscuro el mas CLARO— y el
+       VALLE el de MENOS, que es lo que la palabra significa.
+
+       Medido en claro: contraste 8,18 contra superficie y 7,55 contra fondo · dL* 16,0
+       respecto al acento · croma 60,6 · dE2000 minimo contra lo ajeno 11,4 (umbral
+       6,55). Margen sobre el contrato mas apretado: +74 %. */
+    /* CORRECCION DE D-6, dicha porque una cifra mia mal calculada llego a justificar
+       un diseño. Alli se escribio que «un azul MAS CLARO que el acento no puede cumplir
+       el 3:1 sobre blanco, porque el techo cae en L* 49, justo donde el acento esta».
+       ES FALSO. Recalculado: el techo es L* 61,7 contra la superficie y L* 59,3 contra
+       el FONDO de la app —que es el que ata—. El acento esta en L* 49,7, o sea que
+       quedan 9,6 puntos de margen hacia arriba: justo los que hace falta para un tercer
+       paso con dL* >= 8. El valle cabe, y cabe porque el numero estaba mal, no porque
+       se haya relajado ningun contrato.
+
+       LOS TRES NIVELES, medidos en claro:
+         pico   contraste 8,18 / 7,55 · L* 33,6 · croma 60,6 · dE2000 ajeno 11,4
+         medio  el acento, SIN token nuevo: 4,54 / 4,19 · L* 49,7
+         valle  contraste 3,43 / 3,17 · L* 57,7 · croma 6,9 EXENTO · dE2000 ajeno 11,1
+       dL* entre pasos: 16,0 y 8,0059.
+
+       Y EL CONTRATO MAS APRETADO YA NO ES EL CONTRASTE, ES LA SEPARACION: el valle queda
+       a dL* 8,0059 del medio contra una vara de 8 —SEIS MILESIMAS de margen— mientras el
+       3:1 contra el fondo va holgado a +5,7 %. Mover el acento un punto hacia arriba en
+       claro pone el gate rojo. Se dice aqui y en la prueba para que ese rojo se lea el
+       dia que salga. */
+    --mx-graf-azul-pico:#004aab;
+    /* [DASH-F · D-7b] EL GRIS DEL VALLE. ACORDADO el 17-sep-2026, sobre las
+       dos opciones dibujadas a escala y con la serie real. El azul claro que se ofrecia
+       como alternativa se retiro en el mismo acto: dejarlo declarado y sin uso habria
+       sido un token vivo que ya no nombra nada que se pinte.
+
+       El motivo de que sea gris y no un color:
+
+       La propuesta era «gris, u otro color, o naranja amarilloso». El NARANJA se descarta
+       MIDIENDO: `--mx-warn` ya significa SOBRE-RESERVADO en la tarjeta de al lado, en la
+       misma pantalla y en los badges que mas saltan. Por la misma razon se descarta el
+       verde: la rampa `--mx-graf-verde-*` es identidad de KAM y `--mx-graf-jade` es
+       «Disponible» en el riel. Un valle naranja diria dos cosas con el mismo color a 30
+       cm de distancia.
+
+       Y EL GRIS ADEMAS ES NEUTRO EN VALENCIA, que aqui importa: nadie ha decidido si
+       mucho stock es bueno o es capital parado. El gris dice «este es el extremo bajo»
+       sin decir «esto es malo».
+
+       EXENCION DECLARADA: el piso de croma que se les exige a los azules NO se le aplica
+       a este token. Ese piso existe para que un color se lea como MATIZ, y este se elige
+       precisamente por no tenerlo. A cambio la separacion se mide con dE2000, que si ve
+       la diferencia entre un gris y un azul.
+
+       Medido en claro: contraste 3,43 contra superficie y 3,17 contra fondo · L* 57,7,
+       o sea 8,0 por encima del medio —menos enfasis, que es lo que significa— · dE2000
+       21,6 contra los dos azules de su escala y 11,1 contra todo lo demas de la
+       pantalla, incluido `--mx-muted`, que es «Sin KAM» en el cumulo. */
+    --mx-graf-gris-valle:#888a96;
+    /* Bloque 6 · F3 Dashboard — componentes RGB (sin `#`, para `rgb(var(--mx-heat-rgb) / alpha)`)
+       de la intensidad del heatmap familia×almacén. */
+    --mx-heat-rgb: 46 120 199;
+
+    /* ============================================================
+       [2.0.1-A] EL CARRIL DE PISOS DEL PIE (<768 px).
+
+       Espejo de `src/components/layout/carril.ts`, que es donde vive la REGLA
+       y su porqué. `carril.test.ts` compara los dos y falla si divergen —
+       mismo molde que `documento/tokens.globals.test.ts`, que ya cerró esta
+       clase de duplicación para los colores del documento.
+
+       La escalera: piso(n) = piso(n-1) + alto(n-1) + hueco. Nadie escribe su
+       propio número; cada ocupante consume su token. A 390: nav 0–56 ·
+       asistente desde 68 · Selección desde 128.
+       ============================================================ */
+    --mx-carril-alto-nav: 3.5rem;
+    --mx-carril-alto-asistente: 3rem;
+    --mx-carril-hueco: 0.75rem;
+    --mx-carril-suelo: calc(var(--mx-carril-alto-nav) + env(safe-area-inset-bottom));
+    --mx-carril-asistente: calc(var(--mx-carril-suelo) + var(--mx-carril-hueco));
+    --mx-carril-seleccion: calc(var(--mx-carril-asistente) + var(--mx-carril-alto-asistente) + var(--mx-carril-hueco));
+  }
+
+  /* De `md` para arriba no hay BottomNav (`md:hidden`): el suelo baja a la
+     orilla y manda la regla horizontal de O6. Se degrada el ALTO, no los
+     anclajes: así un ocupante que consuma el token sigue calculando bien en vez
+     de quedar sin base. */
+  @media (min-width: 768px) {
+    :root {
+      --mx-carril-alto-nav: 0rem;
+    }
+  }
+
+  /* REGLA 5 del carril · la cortesía cede ante el trabajo. El saludo del
+     asistente y la Selección compiten por el mismo espacio bajo `md`, así que
+     con Selección viva el saludo se aparta. Va por atributo publicado en
+     `<html>` (`app-shell.tsx`) y NO importando la Selección dentro del
+     asistente: `flotantes.test.ts` prohíbe ese acoplamiento, con razón.
+     No consume el testigo de sesión — estar tapado no es haber saludado. */
+  @media (max-width: 767px) {
+    html[data-carril-seleccion='1'] [data-carril-piso='saludo'] {
+      display: none;
+    }
+  }
+
+  .dark {
+    --background: 220 53% 7%; --foreground: 215 68% 95%;
+    --card: 219 47% 12%; --card-foreground: 215 68% 95%;
+    --popover: 219 47% 12%; --popover-foreground: 215 68% 95%;
+    --primary: 210 74% 63%; --primary-foreground: 220 53% 7%;
+    --secondary: 217 52% 10%; --secondary-foreground: 215 68% 95%;
+    --muted: 219 42% 16%; --muted-foreground: 221 19% 48%;
+    --accent: 219 42% 16%; --accent-foreground: 215 68% 95%;
+    --destructive: 16 74% 57%; --destructive-foreground: 220 53% 7%;
+    --border: 216 34% 23%; --input: 216 34% 23%; --ring: 210 74% 63%;
+
+    --mx-bg:#080E1A; --mx-surface:#101A2C; --mx-surface-2:#0C1626; --mx-surface-3:#18243B;
+    --mx-track:#1A2740; --mx-border:#27374F; --mx-border-soft:#1E2C42;
+    --mx-text:#EAF1FB; --mx-text-strong:#F4F8FD; --mx-text-2:#CBD7E8; --mx-text-3:#A6B6CE;
+    --mx-muted:#8194AE; --mx-muted-2:#637292; --mx-muted-3:#3C4C66;
+    --mx-navy-ink:#9CC1F0;
+    --mx-tint-blue:#142640; --mx-tint-green:#102A20; --mx-tint-amber:#2C2310; --mx-tint-indigo:#16213C;
+    --mx-accent:#5AA0E6; --mx-good:#34B27B; --mx-warn:#D08A3C; --mx-info:#5A8DF0;
+
+    /* Bloque 5 · P3 — paleta curada de color de SKU (espejo de `src/lib/colores-sku.ts`, valores `dark`). */
+    --mx-tag-azul:#7CA6F5; --mx-tag-verde:#46CC7E; --mx-tag-naranja:#E89A4D; --mx-tag-morado:#B29BF7;
+    --mx-tag-rojo:#F17A73; --mx-tag-turquesa:#58D0DA; --mx-tag-rosa:#F17FB2; --mx-tag-grafito:#9FB0C6;
+
+    /* [2.0.1-B · S-1] Apariencia por defecto del proyecto: el --mx-tag-azul de
+       oscuro, y su tinte al 12 %. */
+    --mx-proyecto-acento:#7CA6F5; --mx-proyecto-tinte:#7CA6F51F;
+
+    /* Bloque 6 · F3 Dashboard — token nuevo de gráficas (más luminoso en oscuro, mismo criterio que --mx-accent/--mx-good). */
+    --mx-graf-violeta:#A78BFA;
+    /* [DASH-E · E-1] Los tres del riel, en su version de tema oscuro. **Se
+       ACLARAN**, como todos los --mx-* de este bloque, y eso invierte que tinta
+       necesitan encima: en claro son oscuros y llevan blanco, en oscuro son claros
+       y llevan casi negro. Por eso la pareja del riel es `--mx-surface`, que se
+       invierte al reves — y por eso el componente NO necesita ninguna variante
+       `dark:`. El jade oscuro es el --mx-good oscuro tal cual: ahi ya daba 6,47:1
+       y no habia nada que corregir. */
+    --mx-graf-pizarra:#8FA9D4; --mx-graf-petroleo:#58D0DA; --mx-graf-jade:#34B27B;
+    /* [DASH-E · E-6] La rampa, en oscuro. **Invertida**: el 1.º es el mas CLARO,
+       porque el rango 1 es el de mas contraste contra la tarjeta y aqui la tarjeta es
+       #101A2C. H = 255,1° (el de --mx-graf-violeta oscuro), S = 55 %.
+       Medido: dL* minimo 8,8 · A minimo 4,54 · B minimo 3,01. La tinta voltea en el
+       6.º igual que en claro, y por la misma razon. */
+    --mx-graf-violeta-1:#e5dff6; --mx-graf-violeta-2:#cec3ee; --mx-graf-violeta-3:#b8a8e6;
+    --mx-graf-violeta-4:#a28dde; --mx-graf-violeta-5:#8b72d6; --mx-graf-violeta-6:#6e4ecc;
+    /* [DASH-F · D-2] La rampa VERDE en oscuro. H 131, S 67,5 %. La direccion se
+       INVIERTE respecto a claro, igual que la violeta: el paso 1 es el de mas
+       contraste contra la tarjeta, y en oscuro eso es el mas CLARO.
+       Medido: dL* minimo 10,05 · A minimo 4,64 · B minimo 3,11 · dE2000 contra todo
+       significado de la pantalla, minimo 10,8. La justificacion completa y los seis
+       criterios estan en el bloque claro. */
+    --mx-graf-verde-1:#e3fae7; --mx-graf-verde-2:#92eaa2; --mx-graf-verde-3:#29d649;
+    --mx-graf-verde-4:#23b63e; --mx-graf-verde-5:#1d9834; --mx-graf-verde-6:#177829;
+    /* [DASH-F · D-7b] El azul del PICO en oscuro. Aqui el de mas contraste contra la
+       tarjeta es el mas CLARO, asi que el enfasis se invierte respecto a claro — igual
+       que en las rampas. Medido: contraste 12,98 contra superficie y 14,39 contra
+       fondo · dL* 24,4 respecto al acento oscuro · croma 17,8 · dE2000 minimo contra
+       lo ajeno 9,6. Margen sobre el contrato mas apretado: +46 %. La justificacion
+       completa esta en el bloque claro. */
+    /* [DASH-F · D-7b] Los tres niveles en oscuro. EL ENFASIS SE INVIERTE: el pico es el
+       mas CLARO contra la tarjeta oscura y el valle el mas oscuro, igual que en las
+       rampas. Medido:
+         pico   contraste 12,98 / 14,39 · L* 88,6 · croma 17,8 · dE2000 ajeno 9,6
+         medio  el acento oscuro: 6,31 / 6,99 · L* 64,2
+         valle  contraste 4,80 / 5,32 · L* 56,0 · croma 1,7 EXENTO · dE2000 ajeno 11,6
+       dL* entre pasos: 24,4 y 8,2. Aqui hay mas aire que en claro. La justificacion
+       completa esta en el bloque claro. */
+    --mx-graf-azul-pico:#c0e3fe;
+    /* [DASH-F · D-7b] El gris del valle en oscuro. Aqui «menos enfasis» es mas OSCURO.
+       Medido: contraste 4,80 contra superficie y 5,32 contra fondo · L* 56,0, o sea 8,2
+       por debajo del medio · dE2000 21,6 contra su escala y 11,6 contra lo demas. */
+    --mx-graf-gris-valle:#838788;
+    --mx-heat-rgb: 96 165 250;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
