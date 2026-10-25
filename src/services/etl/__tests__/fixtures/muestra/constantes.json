@@ -1,0 +1,464 @@
+{
+  "semilla": 20260731,
+  "anio": 2031,
+  "nota": "Generado por scripts/generar-datos-muestra.mjs (semilla fija, valores inventados). Cifras calculadas por construccion desde el modelo, no desde los parsers.",
+  "libros": {
+    "unificado": "muestra/inventario-unificado.xlsx",
+    "julio": "muestra/inventario-julio.xlsx",
+    "aduana": "muestra/seguimiento-embarques.xlsx",
+    "cinco": "muestra/libro-5niveles/inventario-5niveles.xlsx"
+  },
+  "dorados": {
+    "inventario": {
+      "sku": "0875-7566-14",
+      "marca": "BRAND5",
+      "familia": "BRAND5",
+      "clase": "C",
+      "descr": "CABLE DE PRUEBA 125 V",
+      "north": 7
+    },
+    "west": {
+      "sku": "0861-5844-9317",
+      "prov": "SERIES5",
+      "fisico": 5,
+      "descr": "SERIES11 AM ALFA SYSTEM 40 IN",
+      "descrUnificado": "SERIES11 AM ALFA SYSTEM 40 IN ADJUSTABLE BASE",
+      "tecnologiaUnificado": "EAS",
+      "familiaUnificado": "SERIES11 ALFA",
+      "claseUnificado": "A"
+    }
+  },
+  "westTestigos": [
+    {
+      "sku": "2444N-M",
+      "prov": "VERTICAL",
+      "fisico": 3,
+      "texto": "3,00"
+    },
+    {
+      "sku": "7802-1101-3426",
+      "prov": "CARGADOR",
+      "fisico": 13472,
+      "texto": "13.472,00"
+    },
+    {
+      "sku": "3818-3500-5293",
+      "prov": "BRAND3",
+      "fisico": 3915,
+      "texto": "3.915,00"
+    }
+  ],
+  "westUnificadoSolo": {
+    "sku": "Q017-07-R99",
+    "marca": "BRAND 6",
+    "tecnologia": "EAS",
+    "familia": "TAG",
+    "clase": null,
+    "descr": "Security tag Q17 58MM",
+    "fisico": 10
+  },
+  "marcasNuevasTestigo": [
+    "BRAND5",
+    "BRAND9",
+    "BRAND2"
+  ],
+  "familiaTestigo": "SERIES11",
+  "kam": {
+    "sembrados": [
+      "LAURA",
+      "DIEGO",
+      "HUGO",
+      "ELENA",
+      "JULIO",
+      "SERGIO",
+      "LUCAS"
+    ],
+    "noSembrados": [
+      "NADIA",
+      "PAULA",
+      "RAQUEL",
+      "TOMAS",
+      "IVAN"
+    ]
+  },
+  "abril": {
+    "productosInventario": 120,
+    "stockInventario": 115,
+    "westRows": 40,
+    "westMatched": 8,
+    "westNuevos": 32,
+    "productosReconciliados": 152,
+    "stockReconciliado": 155,
+    "reservas": 98,
+    "reservasMalformadas": 4,
+    "reservasClienteVacio": 0,
+    "reservasSinProducto": 0,
+    "diagReservas": 22,
+    "diagStock": 0,
+    "enParidad": 130,
+    "marcasNuevas": [
+      "BRAND2",
+      "BRAND3",
+      "BRAND5",
+      "BRAND9",
+      "GENERAL"
+    ],
+    "familiasNuevas": [
+      "BRAND1",
+      "BRAND5",
+      "BRAND9",
+      "CABLE",
+      "GENERAL",
+      "LABEL ROLL",
+      "POWER",
+      "SERIES 2",
+      "SERIES 41",
+      "SERIES10",
+      "SERIES11",
+      "SERIES2",
+      "SERIES3",
+      "SERIES4",
+      "SERIES5",
+      "SERIES6",
+      "SERIES7",
+      "SERIES8",
+      "SERIES9",
+      "TAG"
+    ],
+    "marcaBodega": 6,
+    "productosNacional": 10,
+    "kamsConReserva": [
+      "DIEGO",
+      "HUGO",
+      "JULIO",
+      "LAURA",
+      "LUCAS",
+      "NADIA",
+      "PAULA"
+    ],
+    "inventarioFilas": 124,
+    "westFilas": 44,
+    "reservaFilas": 47,
+    "reservaColumnas": 15,
+    "embarques": {
+      "porHoja": [
+        {
+          "hoja": "BRAND1",
+          "total": 30,
+          "historial": false
+        },
+        {
+          "hoja": "BRAND3",
+          "total": 7,
+          "historial": false
+        },
+        {
+          "hoja": "SERIES 5",
+          "total": 0,
+          "historial": false
+        },
+        {
+          "hoja": "BRAND2",
+          "total": 6,
+          "historial": false
+        },
+        {
+          "hoja": " HISTORIAL DEMO",
+          "total": 40,
+          "historial": true
+        },
+        {
+          "hoja": "WEST",
+          "total": 2,
+          "historial": false
+        },
+        {
+          "hoja": "HISTORIAL WEST",
+          "total": 12,
+          "historial": true
+        }
+      ],
+      "total": 97,
+      "fuera": 3,
+      "historiales": 52,
+      "activos": 45,
+      "hojasTotales": 9,
+      "indiceHojaConEstatus": 1,
+      "embarquesFueraDelUniverso": 3,
+      "skuFuera": [
+        "4778Y-V",
+        "0728-6114-7004",
+        "Q938-80-K51"
+      ]
+    }
+  },
+  "julio": {
+    "productosInventario": 126,
+    "stockInventario": 122,
+    "westRows": 42,
+    "westMatched": 9,
+    "westNuevos": 33,
+    "productosReconciliados": 159,
+    "stockReconciliado": 164,
+    "reservas": 110,
+    "reservasMalformadas": 7,
+    "reservasClienteVacio": 1,
+    "reservasSinProducto": 0,
+    "diagReservas": 27,
+    "diagStock": 0,
+    "enParidad": 132,
+    "marcasNuevas": [
+      "BRAND2",
+      "BRAND3",
+      "BRAND5",
+      "BRAND9",
+      "GENERAL"
+    ],
+    "familiasNuevas": [
+      "BRAND1",
+      "BRAND2",
+      "BRAND3",
+      "BRAND5",
+      "BRAND9",
+      "CABLE",
+      "GENERAL",
+      "LABEL ROLL",
+      "POWER",
+      "SERIES 2",
+      "SERIES 41",
+      "SERIES10",
+      "SERIES11",
+      "SERIES2",
+      "SERIES3",
+      "SERIES4",
+      "SERIES5",
+      "SERIES6",
+      "SERIES7",
+      "SERIES8",
+      "SERIES9",
+      "TAG",
+      "VERTICAL"
+    ],
+    "marcaBodega": 6,
+    "productosNacional": 11,
+    "kamsConReserva": [
+      "DIEGO",
+      "HUGO",
+      "JULIO",
+      "LAURA",
+      "LUCAS",
+      "NADIA",
+      "PAULA"
+    ],
+    "hojasStock": [
+      "Inventario",
+      "Reserva",
+      "Compras",
+      "WEST"
+    ],
+    "hojasAduana": [
+      "OC ABIERTAS",
+      "BRAND1",
+      "BRAND3",
+      "SERIES 5",
+      "BRAND2",
+      "PARTNER9",
+      " HISTORIAL DEMO",
+      "WEST",
+      "HISTORIAL WEST",
+      "GARANTIAS"
+    ],
+    "aduana": {
+      "porHoja": [
+        {
+          "hoja": "BRAND1",
+          "total": 6,
+          "historial": false
+        },
+        {
+          "hoja": "BRAND3",
+          "total": 4,
+          "historial": false
+        },
+        {
+          "hoja": "SERIES 5",
+          "total": 0,
+          "historial": false
+        },
+        {
+          "hoja": "BRAND2",
+          "total": 3,
+          "historial": false
+        },
+        {
+          "hoja": "PARTNER9",
+          "total": 2,
+          "historial": false
+        },
+        {
+          "hoja": " HISTORIAL DEMO",
+          "total": 38,
+          "historial": true
+        },
+        {
+          "hoja": "WEST",
+          "total": 0,
+          "historial": false
+        },
+        {
+          "hoja": "HISTORIAL WEST",
+          "total": 12,
+          "historial": true
+        }
+      ],
+      "total": 65,
+      "fuera": 3,
+      "historiales": 50,
+      "activos": 15,
+      "hojasTotales": 10,
+      "hojaNueva": "PARTNER9"
+    },
+    "columnasAusentes": {
+      "tecnologia": 2,
+      "producto": 1,
+      "familia": 1,
+      "clase": 1
+    },
+    "filasPorHoja": {
+      "Inventario": 130,
+      "Reserva": 55,
+      "Compras": 25,
+      "WEST": 43
+    }
+  },
+  "unificado": {
+    "productosInventario": 123,
+    "stockInventario": 126,
+    "westRows": 41,
+    "westMatched": 8,
+    "westNuevos": 33,
+    "productosReconciliados": 156,
+    "stockReconciliado": 167,
+    "reservas": 107,
+    "reservasMalformadas": 4,
+    "reservasClienteVacio": 0,
+    "reservasSinProducto": 0,
+    "diagReservas": 27,
+    "diagStock": 0,
+    "enParidad": 129,
+    "marcasNuevas": [
+      "BRAND2",
+      "BRAND3",
+      "BRAND5",
+      "BRAND9",
+      "GENERAL"
+    ],
+    "familiasNuevas": [
+      "BRAND1",
+      "BRAND5",
+      "BRAND6",
+      "BRAND9",
+      "CABLE",
+      "CARGADOR",
+      "GENERAL",
+      "LABEL ROLL",
+      "POWER",
+      "SERIES 2",
+      "SERIES 41",
+      "SERIES10",
+      "SERIES11",
+      "SERIES2",
+      "SERIES3",
+      "SERIES4",
+      "SERIES5",
+      "SERIES6",
+      "SERIES7",
+      "SERIES8",
+      "SERIES9",
+      "TAG"
+    ],
+    "marcaBodega": 6,
+    "productosNacional": 11,
+    "kamsConReserva": [
+      "DIEGO",
+      "HUGO",
+      "JULIO",
+      "LAURA",
+      "LUCAS",
+      "PAULA"
+    ],
+    "hojasStock": [
+      "Inventario",
+      "Reserva",
+      "Compras",
+      "INV WEST"
+    ]
+  },
+  "cinco": {
+    "productos": 120,
+    "conTecnologia": 111,
+    "conProducto": 70,
+    "sinTecnologia": 9,
+    "sinProducto": 50,
+    "filasVacias": 11,
+    "tecnologiaConProducto": "BRAND1",
+    "invarianteProductoImplicaTecnologia": true,
+    "testigo": {
+      "sku": "LV0029",
+      "familia": "SERIES 41",
+      "producto": "CLIP 3.0 CUSTOM RETAILER24",
+      "tecnologia": "BRAND1",
+      "marca": "BRAND1"
+    }
+  },
+  "edge": {
+    "inventario": {
+      "sinMarca": "CCC-3",
+      "minuscula": "bbb-2",
+      "miles": {
+        "sku": "BBB-2",
+        "texto": "4.285",
+        "valor": 4285
+      },
+      "primero": {
+        "sku": "AAA-1",
+        "north": 13,
+        "tran": 8,
+        "total": 21,
+        "resv": 27
+      }
+    },
+    "reserva": {
+      "sku": "SKU-1",
+      "valida": {
+        "cliente": "RETAILER64",
+        "kam": "Laura",
+        "cantidad": 11,
+        "motivo": "pedido A",
+        "fecha": "2031-04-23"
+      },
+      "totalFuenteIgnorado": 468
+    },
+    "embarques": {
+      "ocAbierta": {
+        "oc": "QXL4180",
+        "sku": "KR7710"
+      },
+      "garantia": {
+        "sku": "G-1"
+      },
+      "activo": {
+        "sku": "SUJ500-F",
+        "estatus": "En Aduana",
+        "piezas": 100,
+        "fechaRecoleccion": "2031-03-27",
+        "eta": "2031-05-12"
+      },
+      "historico": {
+        "sku": "YEP6332",
+        "estatus": "Producto Disponible",
+        "oc": "QWN3304187"
+      }
+    }
+  }
+}

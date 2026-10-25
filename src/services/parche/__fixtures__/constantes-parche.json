@@ -1,0 +1,176 @@
+{
+  "nota": "Generado por scripts/generar-datos-muestra.mjs (semilla fija, valores inventados). Cifras contadas desde el modelo del generador, no desde el builder.",
+  "semilla": 20260731,
+  "libro": "muestra/clasificacion-parche.xlsx",
+  "hojas": [
+    "Inventario",
+    "INV WEST"
+  ],
+  "filasInventario": 127,
+  "filasWest": 41,
+  "unionSkus": 160,
+  "overlap": 8,
+  "vivos": 165,
+  "enAmbos": 154,
+  "soloNuevo": {
+    "total": 6,
+    "skus": [
+      "1297S-F",
+      "GJ0214-C",
+      "GT8289-N",
+      "Q017-07-R99",
+      "VG9652-Z",
+      "VV0973-V"
+    ]
+  },
+  "soloViejo": {
+    "total": 11,
+    "skus": [
+      "2990J-K",
+      "9825R-S",
+      "JNQS99J",
+      "JYF8543",
+      "KZ4854",
+      "N130-06-V00",
+      "PAULA: REVISAR Z475-42-K47 NT0490",
+      "RFQ9527",
+      "RMA BRC978-Y",
+      "SN9839",
+      "Y935-41-B00"
+    ],
+    "basura": [
+      "PAULA: REVISAR Z475-42-K47 NT0490",
+      "RMA BRC978-Y"
+    ]
+  },
+  "duplicadosIntraArchivo": 0,
+  "westNoResueltos": {
+    "total": 5,
+    "skus": [
+      "NKJ231-R",
+      "NZBG07K",
+      "QCCV64S",
+      "QQ9338",
+      "XKF8655"
+    ]
+  },
+  "westResueltos": {
+    "total": 2,
+    "skus": [
+      "J544-26-C20",
+      "SGNB33F"
+    ]
+  },
+  "escribiria": {
+    "descr": 153,
+    "clase": 144,
+    "tecnologia": 154,
+    "marca": 149,
+    "familia": 151
+  },
+  "difiere": {
+    "descr": 75,
+    "familia": 61,
+    "clase": 53,
+    "marca": 61
+  },
+  "marcaDifierePlaceholders": 7,
+  "catalogos": {
+    "tecnologiasNuevas": [
+      "BRAND1",
+      "CCTV",
+      "EAS",
+      "RFID"
+    ],
+    "marcasNuevas": [
+      "BRAND11",
+      "BRAND13",
+      "BRAND3",
+      "GENERAL"
+    ],
+    "familiasNuevas": 7,
+    "colisionesFamilia": [
+      "LATCH 2.0 / HOOK ADJUSTABLE",
+      "LATCH 2.0 / HOOK ADJUSTABLE HIGH GRADE",
+      "SERIES 3 40 / SERIES 3 50"
+    ]
+  },
+  "vivas": {
+    "marcas": [
+      "BRAND1",
+      "BRAND6",
+      "VERTICAL",
+      "EAS",
+      "CARGADOR",
+      "SERIES5",
+      "NACIONAL",
+      "BRAND5",
+      "BRAND9",
+      "BRAND2"
+    ],
+    "familias": [
+      "BRAND5",
+      "BRAND2",
+      "BRAND9",
+      "BRAND6",
+      "SERIES11",
+      "SERIES2",
+      "SERIES 2",
+      "SERIES3",
+      "SERIES4",
+      "SERIES5",
+      "SERIES6",
+      "TAG",
+      "CABLE",
+      "POWER",
+      "SERIES 41",
+      "CARGADOR"
+    ],
+    "alias": {
+      "brand 6": "BRAND6",
+      "brand1": "BRAND1"
+    }
+  },
+  "testigos": {
+    "doradoOverlap": {
+      "sku": "0861-5844-9317",
+      "marcaV2": "SERIES5",
+      "familiaV2": "SERIES11",
+      "claseV2": "B"
+    },
+    "doradoInventario": {
+      "sku": "0875-7566-14"
+    },
+    "cruzadoResueltoA": {
+      "sku": "SGNB33F",
+      "marcaV2": "BRAND3"
+    },
+    "cruzadoResueltoB": {
+      "sku": "J544-26-C20",
+      "marcaV2": "VERTICAL"
+    },
+    "marcaVaciaEnInventario": {
+      "sku": "FFN468-Z",
+      "marcaV2": "CARGADOR"
+    },
+    "marcaNuevaSoloWest": {
+      "sku": "QJC991-Y",
+      "marcaV2": "NACIONAL",
+      "marcaNueva": "BRAND11"
+    },
+    "variantesDeCaja": {
+      "sku": "8150G-F",
+      "marcaV2": "BRAND13"
+    },
+    "huecosFamiliaClase": {
+      "sku": "FS8493-T",
+      "familiaV2": "SERIES 2",
+      "claseV2": "B"
+    },
+    "huecosDescrClase": {
+      "sku": "BTV188-Y",
+      "descrV2": "Clip holder B25 24MM",
+      "claseV2": "B"
+    }
+  }
+}

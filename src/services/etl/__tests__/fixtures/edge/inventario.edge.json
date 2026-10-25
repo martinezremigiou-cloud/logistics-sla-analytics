@@ -1,0 +1,11 @@
+[
+[],
+[null,null,null,null,null,null,"STOCK"],
+[],
+[null,"ITEM","CLIENTE","MARCA","FAMILIA","CLASS","DESCR","NORTH","SOUTH","EAST","TRAN","BO","TOTAL","RESV","QTY"],
+[null,"AAA-1","RETAILER2","SERIES5","SERIES11","A","Desc uno","13","","","8","","21","27","-6"],
+[null,"bbb-2","","BRAND9","LABEL ROLL","C","Etiqueta demo","4.285","","","","","4285","0","4.285"],
+[null,"CCC-3","","","FAM","C","renglon sin marca","1","","","","","1","0","1"],
+[null,"","X","Y","Z","W","leyenda ITEM vacio","","","","","","","",""],
+[null,"TOTALES","","","","","","100","","","","","100","",""]
+]

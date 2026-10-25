@@ -1,0 +1,1751 @@
+[
+  {
+    "sku": "FS8493-T",
+    "class": "B",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "SERIES 2"
+    }
+  },
+  {
+    "sku": "TSZ784-R",
+    "class": "B",
+    "descr_origen": "Tamper probe N43 28V",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": null
+  },
+  {
+    "sku": "S492-06-N19",
+    "class": "B",
+    "descr_origen": "Hook pin B29 7M",
+    "marcas": null,
+    "familias": {
+      "nombre": "SERIES3"
+    }
+  },
+  {
+    "sku": "1474N-T",
+    "class": null,
+    "descr_origen": "Shelf rail S57 35V",
+    "marcas": {
+      "nombre": "vertical"
+    },
+    "familias": {
+      "nombre": "series11"
+    }
+  },
+  {
+    "sku": "NYF144-R",
+    "class": "C",
+    "descr_origen": "Cord spool Y79 3 PACK",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "CABLE"
+    }
+  },
+  {
+    "sku": "JX6240",
+    "class": "C",
+    "descr_origen": "Pad adhesive C42 44V",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "SERIES7"
+    }
+  },
+  {
+    "sku": "Z997-74-T81",
+    "class": "B",
+    "descr_origen": "Clip holder S24 22V",
+    "marcas": {
+      "nombre": "brand1"
+    },
+    "familias": null
+  },
+  {
+    "sku": "NB1290-Z",
+    "class": "A",
+    "descr_origen": "Shelf rail Y36 90MM",
+    "marcas": {
+      "nombre": "  GENERAL "
+    },
+    "familias": {
+      "nombre": "  SERIES3 "
+    }
+  },
+  {
+    "sku": "VJ7224",
+    "class": "A",
+    "descr_origen": "Clip holder G23 20V",
+    "marcas": null,
+    "familias": null
+  },
+  {
+    "sku": "GG6446",
+    "class": "  C ",
+    "descr_origen": "Label roll Z55 23 IN",
+    "marcas": {
+      "nombre": "  BRAND 6 "
+    },
+    "familias": {
+      "nombre": "series 2"
+    }
+  },
+  {
+    "sku": "XVX998-Y",
+    "class": "c",
+    "descr_origen": "Charger kit X54 6 PACK",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "BRAND9"
+    }
+  },
+  {
+    "sku": "J402-18-Z28",
+    "class": "B",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "CARGADOR"
+    }
+  },
+  {
+    "sku": "YYK244-B",
+    "class": null,
+    "descr_origen": "Hook pin G47 2 PACK",
+    "marcas": {
+      "nombre": "BRAND3"
+    },
+    "familias": {
+      "nombre": "SERIES2"
+    }
+  },
+  {
+    "sku": "VQQ6728",
+    "class": "C",
+    "descr_origen": "Wireless remote K57 84MM",
+    "marcas": {
+      "nombre": "  BRAND1 "
+    },
+    "familias": {
+      "nombre": "SERIES2"
+    }
+  },
+  {
+    "sku": "C003-38-J60",
+    "class": "NUEVO",
+    "descr_origen": "link cord x13 23v",
+    "marcas": {
+      "nombre": "GENERAL"
+    },
+    "familias": {
+      "nombre": "SERIES9"
+    }
+  },
+  {
+    "sku": "BY4462-Q",
+    "class": "c",
+    "descr_origen": "Wireless remote T41 9 PACK",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "SERIES10"
+    }
+  },
+  {
+    "sku": "QZ9433-Z",
+    "class": "A",
+    "descr_origen": "Tamper probe X36 48V",
+    "marcas": {
+      "nombre": "BRAND3"
+    },
+    "familias": {
+      "nombre": "LABEL ROLL"
+    }
+  },
+  {
+    "sku": "BGV3612",
+    "class": "  C ",
+    "descr_origen": "Display stand N40 2M",
+    "marcas": {
+      "nombre": "general"
+    },
+    "familias": null
+  },
+  {
+    "sku": "ZX5067",
+    "class": "C",
+    "descr_origen": "Label roll Q76 35V",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "SERIES8"
+    }
+  },
+  {
+    "sku": "BV0125",
+    "class": "C",
+    "descr_origen": "charger kit g70 20 in",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": null
+  },
+  {
+    "sku": "CBG2961",
+    "class": "A",
+    "descr_origen": "Latch plate Q86 3M",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "  CABLE "
+    }
+  },
+  {
+    "sku": "FY7605-T",
+    "class": "a",
+    "descr_origen": "Hook pin J35 4 PACK",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "FFN468-Z",
+    "class": "C",
+    "descr_origen": "pad adhesive s97 58mm",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": null
+  },
+  {
+    "sku": "QF9442-T",
+    "class": null,
+    "descr_origen": "Security tag Q56 2 PACK",
+    "marcas": null,
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "V068-68-B64",
+    "class": "C",
+    "descr_origen": "Wireless remote N52 3M",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": {
+      "nombre": "POWER"
+    }
+  },
+  {
+    "sku": "KNC887-K",
+    "class": "B",
+    "descr_origen": "Clip holder Y75 1M",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "TAG"
+    }
+  },
+  {
+    "sku": "YCF6196",
+    "class": "B",
+    "descr_origen": "  Link cord C98 7M ",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES9"
+    }
+  },
+  {
+    "sku": "KBQK02G",
+    "class": "b",
+    "descr_origen": "Wireless remote X33 11 PACK",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "7630Y-Y",
+    "class": "A",
+    "descr_origen": "Mount bracket V20 57 IN",
+    "marcas": {
+      "nombre": "EAS"
+    },
+    "familias": {
+      "nombre": "  SERIES10 "
+    }
+  },
+  {
+    "sku": "ZZ8794-N",
+    "class": "B",
+    "descr_origen": "Charger kit S93 85MM",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "BRAND5"
+    }
+  },
+  {
+    "sku": "TCCN22K",
+    "class": "b",
+    "descr_origen": "Cord spool R58 10 PACK",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "SERIES2"
+    }
+  },
+  {
+    "sku": "2444N-M",
+    "class": "a",
+    "descr_origen": "Hook pin Q28 10V",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "SC4832-S",
+    "class": "C",
+    "descr_origen": "Cord spool G59 28V",
+    "marcas": {
+      "nombre": "brand1"
+    },
+    "familias": {
+      "nombre": "  GENERAL "
+    }
+  },
+  {
+    "sku": "SGNB33F",
+    "class": "C",
+    "descr_origen": "  Cord spool N26 4M ",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": {
+      "nombre": "SERIES3"
+    }
+  },
+  {
+    "sku": "SY1500-F",
+    "class": null,
+    "descr_origen": "Clip holder T54 52 IN",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "LATCH 2.0 / HOOK ADJUSTABLE"
+    }
+  },
+  {
+    "sku": "JZ9954",
+    "class": "C",
+    "descr_origen": "Link cord V65 83MM",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "LATCH 2.0 /  HOOK ADJUSTABLE"
+    }
+  },
+  {
+    "sku": "YXSZ57Y",
+    "class": "C",
+    "descr_origen": "  Wireless remote X63 81MM ",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "  SERIES7 "
+    }
+  },
+  {
+    "sku": "B544-53-X52",
+    "class": "A",
+    "descr_origen": "Security tag K52 40V",
+    "marcas": null,
+    "familias": null
+  },
+  {
+    "sku": "XVY6641",
+    "class": "C",
+    "descr_origen": "Hook pin Q69 7V",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "GENERAL"
+    }
+  },
+  {
+    "sku": "RJJ006-R",
+    "class": "A",
+    "descr_origen": "Label roll J14 57 IN",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "BRAND9"
+    }
+  },
+  {
+    "sku": "X152-62-Q09",
+    "class": "B",
+    "descr_origen": "tamper probe b53 89mm",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": {
+      "nombre": "CABLE"
+    }
+  },
+  {
+    "sku": "SB2468-Y",
+    "class": "b",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "series5"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "QT9364-N",
+    "class": "B",
+    "descr_origen": "Latch plate R29 23V",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "Y676-41-S55",
+    "class": "C",
+    "descr_origen": "Security tag S42 5M",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "  SERIES10 "
+    }
+  },
+  {
+    "sku": "NR8417",
+    "class": "b",
+    "descr_origen": "  Tamper probe Y87 25 IN ",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "BRAND1"
+    }
+  },
+  {
+    "sku": "RKZ077-F",
+    "class": "B",
+    "descr_origen": "Security tag J41 29V",
+    "marcas": {
+      "nombre": "  VERTICAL "
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "7802-1101-3426",
+    "class": "C",
+    "descr_origen": "Charger kit R12 24V",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": {
+      "nombre": "  SERIES7 "
+    }
+  },
+  {
+    "sku": "6183T-S",
+    "class": "C",
+    "descr_origen": "Charger kit Z98 4 PACK",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES9"
+    }
+  },
+  {
+    "sku": "SCF722-S",
+    "class": "a",
+    "descr_origen": "  Security tag V67 82MM ",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": {
+      "nombre": "SERIES 2"
+    }
+  },
+  {
+    "sku": "0869Z-Q",
+    "class": "a",
+    "descr_origen": "Clip holder Q93 3M",
+    "marcas": {
+      "nombre": "  GENERAL "
+    },
+    "familias": {
+      "nombre": "BRAND2"
+    }
+  },
+  {
+    "sku": "8150G-F",
+    "class": "C",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "FR5688",
+    "class": "A",
+    "descr_origen": "Tamper probe Z31 75MM",
+    "marcas": {
+      "nombre": "brand1"
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "GZ8087-K",
+    "class": null,
+    "descr_origen": "Shelf rail X89 8M",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "QCQ846-Y",
+    "class": "a",
+    "descr_origen": "Tamper probe V16 52MM",
+    "marcas": {
+      "nombre": "GENERAL"
+    },
+    "familias": {
+      "nombre": "SERIES9"
+    }
+  },
+  {
+    "sku": "FKN967-J",
+    "class": "c",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "nacional"
+    },
+    "familias": {
+      "nombre": "  TAG "
+    }
+  },
+  {
+    "sku": "CK5389-S",
+    "class": "B",
+    "descr_origen": "Hook pin C78 57MM",
+    "marcas": {
+      "nombre": "GENERAL"
+    },
+    "familias": null
+  },
+  {
+    "sku": "YX6991",
+    "class": null,
+    "descr_origen": "Mount bracket B15 7 PACK",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "TAG"
+    }
+  },
+  {
+    "sku": "NZBG07K",
+    "class": "B",
+    "descr_origen": "  Link cord Y23 56 IN ",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "SERIES7"
+    }
+  },
+  {
+    "sku": "ZGRN50G",
+    "class": null,
+    "descr_origen": "Pad adhesive S38 35MM",
+    "marcas": {
+      "nombre": "brand1"
+    },
+    "familias": {
+      "nombre": "brand1"
+    }
+  },
+  {
+    "sku": "N743-60-X92",
+    "class": "C",
+    "descr_origen": "Pad adhesive F14 56 IN",
+    "marcas": {
+      "nombre": "BRAND2"
+    },
+    "familias": {
+      "nombre": "CABLE"
+    }
+  },
+  {
+    "sku": "BZY4167",
+    "class": "A",
+    "descr_origen": "wireless remote c10 25v",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "POWER"
+    }
+  },
+  {
+    "sku": "YB4106-C",
+    "class": null,
+    "descr_origen": "Wireless remote T36 19 IN",
+    "marcas": {
+      "nombre": "GENERAL"
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "XY5726-S",
+    "class": "C",
+    "descr_origen": "hook pin c54 55 in",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": null
+  },
+  {
+    "sku": "JCRF69C",
+    "class": "B",
+    "descr_origen": "Label roll F89 32 IN",
+    "marcas": {
+      "nombre": "  BRAND3 "
+    },
+    "familias": {
+      "nombre": "SERIES10"
+    }
+  },
+  {
+    "sku": "JYF8543",
+    "class": "B",
+    "descr_origen": "Mount bracket C55 10 IN",
+    "marcas": {
+      "nombre": "NACIONAL"
+    },
+    "familias": {
+      "nombre": "BRAND5"
+    }
+  },
+  {
+    "sku": "GR9785-Y",
+    "class": "C",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "QJC991-Y",
+    "class": "B",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "NACIONAL"
+    },
+    "familias": {
+      "nombre": "SERIES10"
+    }
+  },
+  {
+    "sku": "CR7882",
+    "class": "C",
+    "descr_origen": "pad adhesive x86 32 in",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES10"
+    }
+  },
+  {
+    "sku": "ZV2340",
+    "class": "B",
+    "descr_origen": "Shelf rail C94 14 IN",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "CARGADOR"
+    }
+  },
+  {
+    "sku": "VFN315-C",
+    "class": "C",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "KQ2750-N",
+    "class": "B",
+    "descr_origen": "Clip holder Y36 33 IN",
+    "marcas": {
+      "nombre": "NACIONAL"
+    },
+    "familias": {
+      "nombre": "SERIES3"
+    }
+  },
+  {
+    "sku": "QJ7518",
+    "class": "C",
+    "descr_origen": "  Mount bracket J80 56MM ",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "SERIES6"
+    }
+  },
+  {
+    "sku": "3400X-C",
+    "class": "A",
+    "descr_origen": "  Display stand N49 25 IN ",
+    "marcas": {
+      "nombre": "NACIONAL"
+    },
+    "familias": {
+      "nombre": "TAG"
+    }
+  },
+  {
+    "sku": "ZXRC84J",
+    "class": "C",
+    "descr_origen": "Clip holder Y20 40V",
+    "marcas": null,
+    "familias": {
+      "nombre": "label roll"
+    }
+  },
+  {
+    "sku": "VY4860-Y",
+    "class": null,
+    "descr_origen": "shelf rail k81 4m",
+    "marcas": {
+      "nombre": "brand2"
+    },
+    "familias": {
+      "nombre": "series 2"
+    }
+  },
+  {
+    "sku": "XT1681",
+    "class": "C",
+    "descr_origen": "Mount bracket K14 9 PACK",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": null
+  },
+  {
+    "sku": "RMA BRC978-Y",
+    "class": "C",
+    "descr_origen": "Display stand Q11 37V",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "SERIES6"
+    }
+  },
+  {
+    "sku": "BY7254-R",
+    "class": "C",
+    "descr_origen": "Label roll N75 7M",
+    "marcas": {
+      "nombre": "BRAND3"
+    },
+    "familias": {
+      "nombre": "series8"
+    }
+  },
+  {
+    "sku": "NBT901-Q",
+    "class": "0",
+    "descr_origen": "Label roll C97 8 PACK",
+    "marcas": {
+      "nombre": "general"
+    },
+    "familias": {
+      "nombre": "SERIES3"
+    }
+  },
+  {
+    "sku": "FCC7428",
+    "class": "B",
+    "descr_origen": "Pad adhesive R74 2M",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "CABLE"
+    }
+  },
+  {
+    "sku": "FK2621-G",
+    "class": "B",
+    "descr_origen": "display stand y44 44 in",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": null
+  },
+  {
+    "sku": "9510V-N",
+    "class": "B",
+    "descr_origen": "label roll r50 27 in",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "LABEL ROLL"
+    }
+  },
+  {
+    "sku": "NN5539",
+    "class": "A",
+    "descr_origen": null,
+    "marcas": null,
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "9455Z-R",
+    "class": "B",
+    "descr_origen": "  Link cord R40 31 IN ",
+    "marcas": null,
+    "familias": {
+      "nombre": "SERIES6"
+    }
+  },
+  {
+    "sku": "SQ7831",
+    "class": "A",
+    "descr_origen": "Latch plate S87 9M",
+    "marcas": null,
+    "familias": {
+      "nombre": "  TAG "
+    }
+  },
+  {
+    "sku": "2990J-K",
+    "class": null,
+    "descr_origen": "Security tag Z83 25V",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "BRAND9"
+    }
+  },
+  {
+    "sku": "VR5715-Q",
+    "class": "B",
+    "descr_origen": "Pad adhesive G40 69MM",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "  SERIES6 "
+    }
+  },
+  {
+    "sku": "CY6054-J",
+    "class": "#N/D",
+    "descr_origen": "Mount bracket Z12 32 IN",
+    "marcas": {
+      "nombre": "BRAND2"
+    },
+    "familias": {
+      "nombre": "SERIES 2"
+    }
+  },
+  {
+    "sku": "QQ9338",
+    "class": "b",
+    "descr_origen": "Display stand C28 18V",
+    "marcas": null,
+    "familias": {
+      "nombre": "BRAND9"
+    }
+  },
+  {
+    "sku": "0875-7566-14",
+    "class": "C",
+    "descr_origen": "cable de prueba 125 v",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "brand5"
+    }
+  },
+  {
+    "sku": "BB6123-Q",
+    "class": null,
+    "descr_origen": "Hook pin C18 5M",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "SERIES 3  40 / SERIES 3 50"
+    }
+  },
+  {
+    "sku": "QNT6162",
+    "class": "A",
+    "descr_origen": "Latch plate Y14 85MM",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "series4"
+    }
+  },
+  {
+    "sku": "7698V-Q",
+    "class": "C",
+    "descr_origen": "Link cord F71 57 IN",
+    "marcas": {
+      "nombre": "EAS"
+    },
+    "familias": {
+      "nombre": "BRAND2"
+    }
+  },
+  {
+    "sku": "BJ8579",
+    "class": "  C ",
+    "descr_origen": "Cord spool F97 8V",
+    "marcas": {
+      "nombre": "  GENERAL "
+    },
+    "familias": {
+      "nombre": "POWER"
+    }
+  },
+  {
+    "sku": "KV4830",
+    "class": "C",
+    "descr_origen": "Hook pin Z48 27MM",
+    "marcas": {
+      "nombre": "NACIONAL"
+    },
+    "familias": {
+      "nombre": "SERIES10"
+    }
+  },
+  {
+    "sku": "SN9839",
+    "class": null,
+    "descr_origen": "Hook pin S85 6M",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": null
+  },
+  {
+    "sku": "BTV188-Y",
+    "class": "B",
+    "descr_origen": "Charger kit Y84 64MM",
+    "marcas": {
+      "nombre": "BRAND2"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "GZS825-F",
+    "class": "C",
+    "descr_origen": "Cord spool B68 8M",
+    "marcas": {
+      "nombre": "brand2"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "XKF8655",
+    "class": "B",
+    "descr_origen": "Shelf rail C21 78MM",
+    "marcas": null,
+    "familias": {
+      "nombre": "POWER"
+    }
+  },
+  {
+    "sku": "XG4080-B",
+    "class": "B",
+    "descr_origen": "wireless remote v53 7 pack",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "TAG"
+    }
+  },
+  {
+    "sku": "YQ7355-T",
+    "class": "A",
+    "descr_origen": "Latch plate C59 8 PACK",
+    "marcas": {
+      "nombre": "  BRAND2 "
+    },
+    "familias": {
+      "nombre": "LABEL ROLL"
+    }
+  },
+  {
+    "sku": "9825R-S",
+    "class": null,
+    "descr_origen": "Label roll V44 2 PACK",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "PAULA: REVISAR Z475-42-K47 NT0490",
+    "class": "B",
+    "descr_origen": "Display stand Z43 19 IN",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "0549C-Y",
+    "class": "B",
+    "descr_origen": "Display stand J33 7 PACK",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "series2"
+    }
+  },
+  {
+    "sku": "GT3108-Q",
+    "class": "A",
+    "descr_origen": "Charger kit K61 16 IN",
+    "marcas": {
+      "nombre": "BRAND2"
+    },
+    "familias": {
+      "nombre": "SERIES8"
+    }
+  },
+  {
+    "sku": "BJ8798-C",
+    "class": "C",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "  BRAND1 "
+    },
+    "familias": {
+      "nombre": "BRAND9"
+    }
+  },
+  {
+    "sku": "ZJ6707",
+    "class": "a",
+    "descr_origen": "Pad adhesive Z95 7 PACK",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "series11"
+    }
+  },
+  {
+    "sku": "ZXN529-J",
+    "class": "C",
+    "descr_origen": "Clip holder R16 38V",
+    "marcas": {
+      "nombre": "  BRAND1 "
+    },
+    "familias": {
+      "nombre": "series2"
+    }
+  },
+  {
+    "sku": "YXCF87T",
+    "class": "  C ",
+    "descr_origen": "hook pin y80 45mm",
+    "marcas": {
+      "nombre": "  BRAND1 "
+    },
+    "familias": {
+      "nombre": "  SERIES11 "
+    }
+  },
+  {
+    "sku": "7507C-B",
+    "class": "  C ",
+    "descr_origen": "clip holder n94 34 in",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "J544-26-C20",
+    "class": "A",
+    "descr_origen": "display stand n72 11 pack",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": {
+      "nombre": "  SERIES3 "
+    }
+  },
+  {
+    "sku": "KZ4854",
+    "class": null,
+    "descr_origen": "Clip holder T35 78MM",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "7229R-Z",
+    "class": "  C ",
+    "descr_origen": "Tamper probe T44 1M",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "SERIES2"
+    }
+  },
+  {
+    "sku": "QX8263",
+    "class": "  A ",
+    "descr_origen": "Latch plate S50 3 PACK",
+    "marcas": null,
+    "familias": null
+  },
+  {
+    "sku": "YF3421",
+    "class": "c",
+    "descr_origen": "  Cord spool F37 89MM ",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "Y935-41-B00",
+    "class": "C",
+    "descr_origen": "Charger kit G91 12 PACK",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "BRAND9"
+    }
+  },
+  {
+    "sku": "0349J-C",
+    "class": "A",
+    "descr_origen": "Cord spool Y29 23 IN",
+    "marcas": {
+      "nombre": "  BRAND1 "
+    },
+    "familias": {
+      "nombre": "  LATCH 2.0 / HOOK ADJUSTABLE HIGH GRADE "
+    }
+  },
+  {
+    "sku": "JNQS99J",
+    "class": "C",
+    "descr_origen": "Tamper probe X26 11 IN",
+    "marcas": {
+      "nombre": "NACIONAL"
+    },
+    "familias": {
+      "nombre": "SERIES6"
+    }
+  },
+  {
+    "sku": "QCCV64S",
+    "class": "a",
+    "descr_origen": "Pad adhesive S71 8V",
+    "marcas": null,
+    "familias": {
+      "nombre": "SERIES8"
+    }
+  },
+  {
+    "sku": "KT5823-N",
+    "class": "C",
+    "descr_origen": "Charger kit R28 7M",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "2586F-K",
+    "class": "A",
+    "descr_origen": "Latch plate C87 11 PACK",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "4296Z-G",
+    "class": null,
+    "descr_origen": "Security tag T97 35 IN",
+    "marcas": {
+      "nombre": "brand9"
+    },
+    "familias": {
+      "nombre": "CABLE"
+    }
+  },
+  {
+    "sku": "ZR8693",
+    "class": "C",
+    "descr_origen": "link cord z80 11 in",
+    "marcas": {
+      "nombre": "series5"
+    },
+    "familias": {
+      "nombre": "SERIES 2"
+    }
+  },
+  {
+    "sku": "NR9419",
+    "class": null,
+    "descr_origen": "security tag t77 29mm",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "BRAND1"
+    }
+  },
+  {
+    "sku": "NKJ231-R",
+    "class": "C",
+    "descr_origen": "Charger kit Y12 27 IN",
+    "marcas": {
+      "nombre": "EAS"
+    },
+    "familias": {
+      "nombre": "  SERIES9 "
+    }
+  },
+  {
+    "sku": "N067-82-X99",
+    "class": "  B ",
+    "descr_origen": "charger kit c22 8 pack",
+    "marcas": {
+      "nombre": "BRAND2"
+    },
+    "familias": {
+      "nombre": "BRAND9"
+    }
+  },
+  {
+    "sku": "2334Q-Y",
+    "class": "a",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "SERIES10"
+    }
+  },
+  {
+    "sku": "X342-97-K78",
+    "class": "C",
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "SERIES4"
+    }
+  },
+  {
+    "sku": "RT3304-Z",
+    "class": "c",
+    "descr_origen": "Shelf rail R61 28 IN",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES3"
+    }
+  },
+  {
+    "sku": "Z452-83-Z02",
+    "class": null,
+    "descr_origen": "Security tag C29 25 IN",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "C677-16-Y43",
+    "class": "C",
+    "descr_origen": "Mount bracket T91 11 PACK",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "series7"
+    }
+  },
+  {
+    "sku": "CFNV68B",
+    "class": "B",
+    "descr_origen": "Display stand K61 72MM",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": null
+  },
+  {
+    "sku": "NSC244-J",
+    "class": "c",
+    "descr_origen": "  Link cord X72 61MM ",
+    "marcas": {
+      "nombre": "BRAND2"
+    },
+    "familias": {
+      "nombre": "SERIES 3 40 / SERIES 3 50"
+    }
+  },
+  {
+    "sku": "NYR481-V",
+    "class": null,
+    "descr_origen": "Display stand Z76 2M",
+    "marcas": {
+      "nombre": "brand3"
+    },
+    "familias": {
+      "nombre": "series4"
+    }
+  },
+  {
+    "sku": "GTT766-J",
+    "class": "B",
+    "descr_origen": "Link cord G10 8M",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "SERIES 2"
+    }
+  },
+  {
+    "sku": "3818-3500-5293",
+    "class": "B",
+    "descr_origen": "label roll t61 40mm",
+    "marcas": {
+      "nombre": "BRAND3"
+    },
+    "familias": {
+      "nombre": "series10"
+    }
+  },
+  {
+    "sku": "R613-86-Q47",
+    "class": "a",
+    "descr_origen": "Charger kit K37 12 PACK",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "series11"
+    }
+  },
+  {
+    "sku": "K567-71-T08",
+    "class": "C",
+    "descr_origen": "tamper probe f99 6m",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "LATCH  2.0 / HOOK ADJUSTABLE HIGH GRADE"
+    }
+  },
+  {
+    "sku": "B371-74-F31",
+    "class": "A",
+    "descr_origen": "Shelf rail V34 27V",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": null
+  },
+  {
+    "sku": "SV2361-C",
+    "class": "C",
+    "descr_origen": "Wireless remote Q46 33MM",
+    "marcas": {
+      "nombre": "BRAND3"
+    },
+    "familias": {
+      "nombre": "SERIES6"
+    }
+  },
+  {
+    "sku": "N130-06-V00",
+    "class": "B",
+    "descr_origen": "Charger kit J39 13V",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "KCGZ63Y",
+    "class": "a",
+    "descr_origen": "Label roll F80 12V",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "CABLE"
+    }
+  },
+  {
+    "sku": "X134-04-X38",
+    "class": "A",
+    "descr_origen": "  Cord spool R26 7 PACK ",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "SERIES3"
+    }
+  },
+  {
+    "sku": "RFQ9527",
+    "class": "B",
+    "descr_origen": "Pad adhesive X91 43 IN",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "TAG"
+    }
+  },
+  {
+    "sku": "NQB1607",
+    "class": "c",
+    "descr_origen": "Cord spool Q28 8V",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": null
+  },
+  {
+    "sku": "XJK725-Y",
+    "class": "A",
+    "descr_origen": "Display stand Y14 32MM",
+    "marcas": {
+      "nombre": "EAS"
+    },
+    "familias": null
+  },
+  {
+    "sku": "BRY366-Y",
+    "class": "B",
+    "descr_origen": "Latch plate J67 9M",
+    "marcas": {
+      "nombre": "BRAND3"
+    },
+    "familias": {
+      "nombre": "CARGADOR"
+    }
+  },
+  {
+    "sku": "BG3808-T",
+    "class": "b",
+    "descr_origen": "Mount bracket S19 8 PACK",
+    "marcas": {
+      "nombre": "brand3"
+    },
+    "familias": {
+      "nombre": "SERIES7"
+    }
+  },
+  {
+    "sku": "SQX7664",
+    "class": "B",
+    "descr_origen": "Tamper probe G42 2M",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES3"
+    }
+  },
+  {
+    "sku": "B813-42-J34",
+    "class": "A",
+    "descr_origen": "Shelf rail K92 44 IN",
+    "marcas": {
+      "nombre": "CARGADOR"
+    },
+    "familias": null
+  },
+  {
+    "sku": "JBV331-C",
+    "class": "C",
+    "descr_origen": "Shelf rail R70 9M",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES2"
+    }
+  },
+  {
+    "sku": "GRN269-F",
+    "class": null,
+    "descr_origen": null,
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "ZB6577-F",
+    "class": "B",
+    "descr_origen": "shelf rail s43 64mm",
+    "marcas": null,
+    "familias": null
+  },
+  {
+    "sku": "YVT8557",
+    "class": "C",
+    "descr_origen": "Wireless remote Z22 17 IN",
+    "marcas": null,
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "VRX0010",
+    "class": "a",
+    "descr_origen": "Link cord Z85 12 PACK",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "BRAND6"
+    }
+  },
+  {
+    "sku": "SQX710-Y",
+    "class": null,
+    "descr_origen": "Clip holder C23 11 PACK",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "SERIES9"
+    }
+  },
+  {
+    "sku": "YX8029",
+    "class": "C",
+    "descr_origen": "Display stand Z84 2 PACK",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "SERIES 41"
+    }
+  },
+  {
+    "sku": "ZCQ8771",
+    "class": "  B ",
+    "descr_origen": "Display stand F74 6M",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "SERIES11"
+    }
+  },
+  {
+    "sku": "0861-5844-9317",
+    "class": "B",
+    "descr_origen": "Link cord S17 9 PACK",
+    "marcas": {
+      "nombre": "BRAND2"
+    },
+    "familias": {
+      "nombre": "CABLE"
+    }
+  },
+  {
+    "sku": "ZGQ490-Z",
+    "class": "a",
+    "descr_origen": "wireless remote j55 2 pack",
+    "marcas": {
+      "nombre": "BRAND5"
+    },
+    "familias": {
+      "nombre": "  SERIES2 "
+    }
+  },
+  {
+    "sku": "ZG1769-N",
+    "class": "C",
+    "descr_origen": "  Cord spool K94 40V ",
+    "marcas": {
+      "nombre": "BRAND1"
+    },
+    "familias": {
+      "nombre": "POWER"
+    }
+  },
+  {
+    "sku": "QJQ2322",
+    "class": "C",
+    "descr_origen": "Wireless remote X28 78MM",
+    "marcas": {
+      "nombre": "BRAND6"
+    },
+    "familias": {
+      "nombre": "POWER"
+    }
+  },
+  {
+    "sku": "G814-59-K79",
+    "class": "b",
+    "descr_origen": "Pad adhesive S10 8 PACK",
+    "marcas": {
+      "nombre": "SERIES5"
+    },
+    "familias": {
+      "nombre": "SERIES7"
+    }
+  },
+  {
+    "sku": "GK4347-S",
+    "class": null,
+    "descr_origen": "Cord spool F27 7M",
+    "marcas": {
+      "nombre": "VERTICAL"
+    },
+    "familias": {
+      "nombre": "POWER"
+    }
+  },
+  {
+    "sku": "JRF490-X",
+    "class": "C",
+    "descr_origen": "latch plate v44 13v",
+    "marcas": {
+      "nombre": "BRAND9"
+    },
+    "familias": {
+      "nombre": "SERIES8"
+    }
+  }
+]
