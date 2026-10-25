@@ -1,0 +1,244 @@
+{
+  "name": "Demo - Boletin semanal de avisos",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 8,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        300
+      ],
+      "id": "wf-trigger-semanal",
+      "name": "Lunes 08:00",
+      "notes": "EL CALENDARIO VIVE AQUI, no en el portal. Ese es el reparto: n8n entrega y decide CUANDO; el portal decide QUE y A QUIEN. Cambiar la cadencia es cambiar este nodo y la ventana del nodo siguiente, y no toca ni una linea del portal. La zona horaria sale de la declarada en `settings.timezone` de este workflow."
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "v1",
+              "name": "desde",
+              "value": "={{ $now.setZone('America/Mexico_City').minus({ days: 7 }).toUTC().toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "v2",
+              "name": "hasta",
+              "value": "={{ $now.setZone('America/Mexico_City').toUTC().toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "v3",
+              "name": "clave_intento",
+              "value": "={{ 'semanal-' + $now.setZone('America/Mexico_City').toFormat(\"kkkk-'W'WW\") }}",
+              "type": "string"
+            },
+            {
+              "id": "v4",
+              "name": "url_portal",
+              "value": "http://127.0.0.1:3000",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ],
+      "id": "wf-ventana",
+      "name": "Ventana",
+      "notes": "LA CLAVE ES OPACA PARA EL PORTAL. El la valida como cadena, nunca la interpreta: por eso un correo por evento seria otro workflow con otra clave y cero cambios del lado del portal. `kkkk-'W'WW` es el ano-semana ISO de Luxon, asi que dos corridas de la misma semana producen LA MISMA clave. Con ella el portal deja fuera solo a quien ya tiene su envio CONFIRMADO, asi que una segunda corrida no le repite el correo a esa persona; quien sigue en `preparado` vuelve a ser candidato en cada llamada y la clave no lo impide (ver la nota del nodo Pedir los envios al portal).\n\nLA VENTANA SON 7 DIAS EXACTOS, sin traslape. Consecuencia declarada: si una semana no corre, esos 7 dias NO se recuperan. Se prefirio el hueco al traslape porque un traslape reportaria dos veces un mismo cambio, que es justo lo que el flujo promete no hacer.\n\n`url_portal` es un PARAMETRO, no una decision: su valor de ejemplo es el portal local (http://127.0.0.1:3000), que permite ensayar el flujo sin desplegar nada.\n\nSE DECLARA EL FILO: un valor de localhost en un workflow importado en una instancia de n8n que corre en otra maquina no alcanzaria el portal. Este JSON se ensaya en local; importarlo en otra instancia exige cambiar esta linea."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.url_portal }}/api/avisos/envios",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ desde: $json.desde, hasta: $json.hasta, clave_intento: $json.clave_intento, url_portal: $json.url_portal, solo_perfiles: $json.solo_perfiles }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        300
+      ],
+      "id": "wf-pedir-envios",
+      "name": "Pedir los envios al portal",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "notes": "EL SECRETO VA POR CREDENCIAL, no en el nodo. Un workflow exportado es un archivo de texto que acaba en un repo y en un backup; una llave escrita aqui se filtra sola. Este export no lleva el bloque `credentials`: al importar, se asigna una credencial de tipo Header Auth con nombre de cabecera `x-avisos-secret`.\n\nREINTENTAR ESTE NODO NO ENVIA NADA: solo vuelve a pedir la lista al portal. Pero el portal NO es idempotente en lo que responde. La clave solo hace idempotente el REGISTRO del intento: UNIQUE (perfil_id, clave_intento) de la migracion 0027 mas `ignoreDuplicates` evitan dos filas para la misma clave y que un `enviado` baje a `preparado`. La respuesta no se guarda: el portal recalcula avisos y correos con datos vivos en cada llamada (src/services/correo.service.ts), asi que un reintento puede traer contenido mas nuevo que el primer intento. Y la clave no impide reenviar: solo deja fuera a quien ya tiene el envio CONFIRMADO; quien sigue en `preparado` vuelve a ser candidato en cada llamada con la misma clave. Lo que protege de un doble envio es la confirmacion (nodo Confirmar que salio), no el reintento; el reintento del nodo de envio tiene su propia limitacion (RETRYONFAIL-DEL-ENVIO-REENVIA-A-TODOS, docs/known-limitations.md).\n\nLA RESPUESTA YA VIENE DECIDIDA Y RENDERIZADA: quien aparece en `correos` se envia, con su `asunto` y su `html`. Aqui NO se filtra ni se maqueta nada.\n\n`solo_perfiles` viaja aqui pero NO lo define este archivo: es un campo opcional que se agrega al nodo «Ventana» solo para ensayos acotados. Con la clave ausente, JSON.stringify la omite y el cuerpo sale identico al del flujo normal."
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "correos",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        660,
+        300
+      ],
+      "id": "wf-uno-por-persona",
+      "name": "Uno por persona",
+      "notes": "El portal devuelve UN objeto con la lista dentro. Esto la abre en un item por destinatario para que se mande un correo a cada quien.\n\nSi `correos` viene vacio, aqui se acaba el workflow sin enviar nada — y eso es CORRECTO: es la regla del correo vacio. Nunca se manda un correo cuyo contenido sea 'no paso nada'."
+    },
+    {
+      "parameters": {
+        "fromEmail": "Logistics SLA Analytics <notificaciones@example.com>",
+        "toEmail": "={{ $json.correo }}",
+        "subject": "={{ $json.asunto }}",
+        "emailFormat": "html",
+        "html": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        880,
+        300
+      ],
+      "id": "wf-enviar",
+      "name": "Enviar el correo",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput",
+      "notes": "EL ASUNTO Y EL CUERPO LOS RENDERIZA EL PORTAL (src/lib/correo-plantilla.ts), con sus pruebas y con un gate que impide que se cuele un `display:flex` o un `linear-gradient`, que los clientes de correo de escritorio no entienden.\n\nMaquetar aqui habria creado una segunda copia del HTML: una versionada y probada, otra editable en un textarea. Divergirian.\n\n`onError: continueErrorOutput`. El modo `continueRegularOutput` saca el item FALLIDO por la salida PRINCIPAL, que aqui va derecho a «Confirmar que salio»: un envio reventado quedaria `estado='enviado'` con su `confirmado_en`, sin reintento, y eso callaria la alarma del canal (`canalDeCorreoCallado`, src/lib/correo.ts). Con `continueErrorOutput` la salida se parte en dos: main[0] = exito -> se confirma; main[1] = error -> «No se confirma (a proposito)», que no escribe nada. El que fallo NO se confirma, la ventana sigue contando como no enviada, y el intento de la semana siguiente lo vuelve a entregar.\n\nLos 2 intentos de `retryOnFail` ocurren ANTES de que el item salga por main[1].\n\nEL NODO ES SMTP (`emailSend`) Y NO GMAIL por dos razones distintas. (1) TECNICA: el nodo de Gmail no puede enviar desde un alias. (2) DE ENTREGABILIDAD: Gmail firma DKIM con el dominio de Google, y ni SPF ni DKIM alinean con el dominio del remitente; con SMTP propio el remitente firma con su dominio.\n\nLA CREDENCIAL VA POR NOMBRE, NUNCA POR VALOR: se asigna al importar y este archivo no lleva ninguna. `n8n/workflows.test.ts` rechaza cualquier bloque `credentials` y cualquier valor con forma de secreto en este archivo.\n\nEL `typeVersion` 2.1 DE `emailSend` ES UNA SUPOSICION, NO UNA MEDICION: va DECLARADO en VERSIONES_NO_MEDIDAS de `workflows.test.ts`, que es el mecanismo de este repo para eso. Si n8n lo rechaza al importar, el numero esta en un solo sitio.\n\n`options.appendAttribution: false` APAGA la firma «This email was sent automatically with n8n», que el nodo aniade POR OMISION (default: true, leido del esquema). El CHARSET no se puede fijar aqui: las opciones de este nodo son appendAttribution, attachments, fileAttachments, ccEmail, bccEmail, allowUnauthorizedCerts y replyTo — ninguna mas."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Ventana').first().json.url_portal }}/api/avisos/envios/confirmar",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ perfil_id: $('Uno por persona').item.json.perfil_id, clave_intento: $('Ventana').first().json.clave_intento }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        300
+      ],
+      "id": "wf-confirmar",
+      "name": "Confirmar que salio",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "notes": "ESTO ES LO UNICO QUE MUEVE LA AGUJA. Mientras no se confirme, la ventana sigue contando como NO enviada y el intento siguiente la vuelve a entregar. La asimetria es deliberada: es preferible mandar un correo dos veces que perderlo.\n\nCONFIRMAR DOS VECES DA EL MISMO RESULTADO QUE UNA: responde 200 en los dos casos y no mueve `confirmado_en`. Por eso el reintento de aqui es seguro.\n\nY DE AQUI SALE LA ALARMA: `envios_aviso` es lo que lee `canalDeCorreoCallado()`. Si este nodo deja de correr, el admin lo ve en la campana a los 14 dias. Si NUNCA corre, no lo ve nadie — por eso el primer envio debe hacerse y confirmarse a mano.\n\nPOR ESO SOLO PUEDE LLEGAR AQUI LA SALIDA DE EXITO. Este nodo es el que escribe; si le llegara un envio fallido, la alarma que vigila el canal quedaria muda por culpa del propio canal. Lo vigila `n8n/workflows.test.ts`."
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        460
+      ],
+      "id": "wf-no-confirma",
+      "name": "No se confirma (a proposito)",
+      "notes": "AQUI TERMINA UN ENVIO QUE FALLO, y terminar aqui es el arreglo.\n\nNo escribe nada: ni confirma, ni marca, ni avisa. Esa es exactamente la conducta que se quiere — sin fila `enviado`, la ventana sigue contando como NO entregada y el intento de la semana que viene la vuelve a mandar.\n\nEXISTE PARA QUE SE VEA. Una salida de error cableada a la nada se lee en el lienzo como un descuido; cableada aqui se lee como una decision. El nodo es la diferencia entre «se me olvido» y «es a proposito»."
+    }
+  ],
+  "connections": {
+    "Lunes 08:00": {
+      "main": [
+        [
+          {
+            "node": "Ventana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ventana": {
+      "main": [
+        [
+          {
+            "node": "Pedir los envios al portal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pedir los envios al portal": {
+      "main": [
+        [
+          {
+            "node": "Uno por persona",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Uno por persona": {
+      "main": [
+        [
+          {
+            "node": "Enviar el correo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar el correo": {
+      "main": [
+        [
+          {
+            "node": "Confirmar que salio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No se confirma (a proposito)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "timezone": "America/Mexico_City"
+  },
+  "active": false,
+  "tags": []
+}
