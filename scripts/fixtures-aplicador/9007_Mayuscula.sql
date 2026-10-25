@@ -1,0 +1,13 @@
+-- ============================================================
+-- [S7-C] FIXTURE ROJO de la guarda de nombre · una MAYÚSCULA en el slug.
+--
+-- Las 21 migraciones del repo usan slug en minúsculas. Un `name` con
+-- mayúscula se cotejaría mal contra el ledger en cuanto alguien lo
+-- escribiera de la otra forma, y en Windows (sistema de archivos
+-- insensible a mayúsculas) `9007_Mayuscula.sql` y `9007_mayuscula.sql`
+-- son el MISMO archivo mientras que para el ledger son dos `name`
+-- distintos. Fail-closed: se rechaza.
+--
+-- ESPERADO: exit 2, con el formato esperado y el recibido.
+-- ============================================================
+SELECT 1;

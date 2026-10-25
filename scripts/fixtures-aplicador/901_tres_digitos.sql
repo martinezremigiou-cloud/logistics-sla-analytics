@@ -1,0 +1,11 @@
+-- ============================================================
+-- [S7-C] FIXTURE ROJO de la guarda de nombre · TRES dígitos, no cuatro.
+--
+-- El caso más traicionero de todos: `901_` se parece tanto a `0901_` que
+-- pasa desapercibido a ojo, pero el número de versión es la identidad con
+-- la que el cotejo ledger↔disco empareja fila y archivo. Con tres dígitos
+-- ese emparejamiento deja de existir en silencio.
+--
+-- ESPERADO: exit 2, con el formato esperado y el recibido.
+-- ============================================================
+SELECT 1;

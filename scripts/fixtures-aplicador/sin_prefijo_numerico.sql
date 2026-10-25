@@ -1,0 +1,16 @@
+-- ============================================================
+-- [S7-C] FIXTURE ROJO de la guarda de nombre (ratificación S2, punto 4).
+--
+-- El SQL de abajo es intachable: cero hallazgos para
+-- verificar-migracion.mjs, transacción implícita, se aplicaría sin
+-- problema. Lo único malo es el NOMBRE DEL ARCHIVO: no empieza con los
+-- cuatro dígitos de versión, así que el `name` del ledger que se derivaría
+-- de él (`sin_prefijo_numerico`) jamás podría cotejarse con ninguna fila
+-- por número de versión.
+--
+-- ESPERADO: exit 2, con el mensaje que dice qué se esperaba
+-- (`NNNN_slug.sql`) y qué se recibió, y SIN inventar un nombre corregido.
+-- Es la prueba de vacuidad de esa guarda: sin ella, este archivo pasaría
+-- de largo exactamente como pasaba antes de S7-C.
+-- ============================================================
+SELECT 1;
